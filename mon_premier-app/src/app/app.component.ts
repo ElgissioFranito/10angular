@@ -6,5 +6,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'mon_premier-app';
+  mahazoLalana = false;
+
+  fit1 = "jiro ampoule";
+  fit2 = "bafla";
+  fit3 = "télé"
+
+  constructor() {
+    // timeout changer la valeur de mahazoLalana en vrai après 3s
+    setTimeout(() => {
+      this.mahazoLalana = true;
+    }, 3000);
+  }
+  onVelomina() {
+    alert("Nivelominao daholo ny fitaovana")
+  }
 }
