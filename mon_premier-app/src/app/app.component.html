@@ -13,12 +13,19 @@
     <div class="row">
         <div class="col-xs-12">
             <h2>Ireo fitaovana mandeha courant</h2>
+            <br>
+            <!-- les pipes | (l'ordre de pipe est très important) -->
+            nojerena farany : {{ upDat | date | uppercase}}
             <ul class="list-group">
 
                 <!-- insertion du composant "fitaovana" dans un liste -->
-                <app-fitaovana [anaranaFit]="fit1" [toetraFit]="'velona'"></app-fitaovana>
-                <app-fitaovana [anaranaFit]="fit2" [toetraFit]="'maty'"></app-fitaovana>
-                <app-fitaovana [anaranaFit]="fit3" [toetraFit]="'velona'"></app-fitaovana>
+                <!-- directive structurelle *ngFor -->
+                <app-fitaovana *ngFor="let aparay of appareils" [anaranaFit]="aparay.nom" [toetraFit]="aparay.status">
+                </app-fitaovana>
+
+                <!-- on peut aussi faire [anaranaFit] =" 'jiro' " : mais garder tjrs les '' a l'interieur -->
+                <!-- on peut aussi faire anarana = " jiro " : cette fois tjrs sans les '' a l'interieur (ou sans "" a l'exterieur)-->
+
             </ul>
             <br>
             <!-- liaison par propriété [ ] -->
@@ -26,6 +33,5 @@
             <button class="btn btn-success" [disabled]="!mahazoLalana" (click)="onVelomina()"> Velomina daholo</button>
         </div>
     </div>
-
 
 </div>

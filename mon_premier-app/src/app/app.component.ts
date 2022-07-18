@@ -8,9 +8,22 @@ import { Component } from '@angular/core';
 export class AppComponent {
   mahazoLalana = false;
 
-  fit1 = "jiro ampoule";
-  fit2 = "bafla";
-  fit3 = "télé"
+  upDat = new Date;
+
+  appareils = [
+    {
+      nom: "Jiro ampoule",
+      status: "velona"
+    },
+    {
+      nom: "sibofera",
+      status: "maty"
+    },
+    {
+      nom: "Télé",
+      status: "velona"
+    },
+  ]
 
   constructor() {
     // timeout changer la valeur de mahazoLalana en vrai après 3s

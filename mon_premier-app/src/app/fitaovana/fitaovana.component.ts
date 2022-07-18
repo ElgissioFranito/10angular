@@ -19,4 +19,12 @@ export class FitaovanaComponent implements OnInit {
     return this.toetraFit;
   }
 
+  getColor() {
+    if (this.toetraFit === "velona") {
+      return "green"
+    } else {
+      return "red"
+    }
+  }
+
 }

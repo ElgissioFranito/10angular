@@ -1,6 +1,14 @@
-<li class="list-group-item">
-    <!-- interpolation {{ }} -->
-    <h4> fitaovana: {{ anaranaFit }} -- toetrany : {{getToetrany()}}</h4>
+<!-- directive par attribut ngClass (qui prend comme valeur" {clé:valeur} "") -->
+<li
+    [ngClass]="{'list-group-item':true,'list-group-item-success':toetraFit==='velona','list-group-item-danger':toetraFit==='maty'}">
+
+    <!-- directive structurelle *ngIf -->
+    <div *ngIf=" toetraFit === 'maty' " style="width: 10px; height: 10px; border-radius: 50%;background-color: red;">
+    </div>
+
+    <!-- interpolation {{ }} (dans le document) et liaison par propriété [ ] (dans l'attribut d'une balise)-->
+    <!-- directive par attribut ngStyle (qui prend comme valeur" {clé:valeur} "")-->
+    <h4 [ngStyle]="{color: getColor()}"> fitaovana: {{ anaranaFit }} -- toetrany : {{getToetrany()}}</h4>
 
     <!-- liaison à double sens [( )] : la parenthese est a l'interieur-->
     <input type="text" class="form-control" [(ngModel)]="anaranaFit">
