@@ -1,26 +1,33 @@
 <div class="container">
-    <h1>Fampiasana angular</h1>
-    <img width="100px" alt="Angular Logo" src="favicon.ico">
-    <br><br>
+    <div style="text-align: center;">
+        <h1>Angular zany koa ee!!!! <br> <img style="width: 70px;" src="favicon.ico"> </h1>
+
+        <br><br>
 
 
-    <!-- insertion du composant "utilisateur" -->
-    <app-utilisateur></app-utilisateur>
-    <br><br>
+        <!-- insertion du composant "utilisateur" -->
+        <app-utilisateur></app-utilisateur>
+        <br><br>
+    </div>
 
 
     <!-- lister les appareil -->
     <div class="row">
         <div class="col-xs-12">
-            <h2>Ireo fitaovana mandeha courant</h2>
+            <h2>Ireo fitaovana mandeha courant ato antrano</h2>
             <br>
-            <!-- les pipes | (l'ordre de pipe est très important) -->
-            nojerena farany : {{ upDat | date | uppercase}}
-            <ul class="list-group">
 
+
+            <!-- | pour afficher la valeur en different format (date,currency,uppercase,lowercase,percent,Decimal ou async,json,slice,etc...)-->
+            <!-- les pipes | (l'ordre de pipe est très important) (   EEEE:jourDeLaSemaine, d: jourDuMois, MMMM:mois, y:annee  )-->
+            nojerena farany : {{ upDat | date: "EEEEdMMMMy" | uppercase}}
+
+
+            <ul class="list-group">
                 <!-- insertion du composant "fitaovana" dans un liste -->
                 <!-- directive structurelle *ngFor -->
-                <app-fitaovana *ngFor="let aparay of appareils" [anaranaFit]="aparay.nom" [toetraFit]="aparay.status">
+                <app-fitaovana *ngFor="let aparay of this.appareils" [anaranaFit]="aparay.nom"
+                    [toetraFit]="aparay.status">
                 </app-fitaovana>
 
                 <!-- on peut aussi faire [anaranaFit] =" 'jiro' " : mais garder tjrs les '' a l'interieur -->
@@ -30,7 +37,10 @@
             <br>
             <!-- liaison par propriété [ ] -->
             <!-- liaison par evenement ( ) -->
-            <button class="btn btn-success" [disabled]="!mahazoLalana" (click)="onVelomina()"> Velomina daholo</button>
+            <button class="btn btn-success" [disabled]="!mahazoLalana" (click)="onVelomina()" style="margin: 10px;">
+                Velomina daholo</button>
+            <button class="btn btn-success" [disabled]="!mahazoLalana" (click)="onVonoina()" style="margin: 10px;">
+                Vonoina daholo </button>
         </div>
     </div>
 

@@ -7,6 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class FitaovanaComponent implements OnInit {
 
+  // il faut importer Input avant de l'ituliser dans le component
   @Input() anaranaFit: string;
   @Input() toetraFit: string;
 
